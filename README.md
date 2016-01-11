@@ -1,8 +1,6 @@
 # TwitterUsernameExtractor
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/twitter_username_extractor`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+Extract a Twitter username from strings with various different formats. For example `@username`, `https://twitter.com/username`, `http://www.twitter.com/#!/username` will all map to `username` using this library.
 
 ## Installation
 
@@ -22,7 +20,16 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+```ruby
+TwitterUsernameExtractor.extract('https://twitter.com/taylorswift13')
+=> "taylorswift13"
+
+TwitterUsernameExtractor.extract('@taylorswift13')
+=> "taylorswift13"
+
+TwitterUsernameExtractor.extract('http://www.twitter.com/@taylorswift13')
+=> "taylorswift13"
+```
 
 ## Development
 
@@ -32,10 +39,8 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/twitter_username_extractor.
-
+Bug reports and pull requests are welcome on GitHub at https://github.com/everypolitician/twitter_username_extractor.
 
 ## License
 
 The gem is available as open source under the terms of the [MIT License](http://opensource.org/licenses/MIT).
-

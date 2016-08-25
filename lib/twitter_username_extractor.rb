@@ -13,7 +13,7 @@ module TwitterUsernameExtractor
     return Regexp.last_match(1) if t.match(%r{twitter.com/search\?q=%23(\w+)}i)
     return Regexp.last_match(1) if t.match(%r{twitter.com/#!/https://twitter.com/(\w+)}i)
     return Regexp.last_match(1) if t.match(%r{(?:www.)?twitter.com/#!/(\w+)[/\?]?}i)
-    return Regexp.last_match(1) if t.match(%r{(?:www.)?twitter.com/@?(\w+)[/\/]?}i)
+    return Regexp.last_match(1) if t.match(%r{(?:www.)?twitter.com/@?(\w+)[\/]?}i)
     fail Error, "Unknown twitter handle: #{t}"
   end
 end
